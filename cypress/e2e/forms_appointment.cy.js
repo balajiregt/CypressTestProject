@@ -45,11 +45,4 @@ describe('template spec', () => {
 
   })
 
-  it('should select a date', () => {
-    // ...your setup code...
-
-    CalendarUtils.selectDate('.input-group-addon', '24-08-2023');
-    // ... assertions or other operations...
-  });
-
 })
