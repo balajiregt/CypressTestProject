@@ -7,7 +7,6 @@ it('bank', () => {
   .invoke('text')
   .then((text) => {
     const parts = text.split('');
-    cy.log(typeof parts) //object
     cy.log(parts) //array[5]...["1", "4", "1", "2", "1"]
     const num1 = parseInt(parts.slice(-2).join(''), 10);
     cy.log(num1)
@@ -22,5 +21,9 @@ it('bank', () => {
     cy.log(typeof num1) //number
     cy.log(result.toString()); //returns string- 1
   }); 
+
+  it('', () => {
+    
+  });
 });
 
