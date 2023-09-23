@@ -19,7 +19,6 @@ class sauceDemo_login{
         return this
     }
 
-
 }
 
 export default sauceDemo_login

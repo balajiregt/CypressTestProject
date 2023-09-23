@@ -1,12 +1,16 @@
-import sauceDemo_login from "../e2e/login_usingFixtures_page.cy.js"
-//const com = new sauceDemo_login(); // Instantiate inside the test block
+import sauceDemo_login from "../pages/login_usingFixtures_page.cy"
+const com = new sauceDemo_login(); // Instantiate inside the test block
 
 
 it('Test1-single user login', () => {
-    cy.visit('https://www.saucedemo.com/')
-    cy.get('#user-name').type('standard_user')
-    cy.get('#password').type('secret_sauce')
-    cy.get('#login-button').click()
+    //cy.visit('https://www.saucedemo.com/')
+    com.navigate()
+    com.usernameField('standard_user')
+    com.passwordField('secret_sauce')
+    com.loginButton()
+   // cy.get('#user-name').type('standard_user')
+   // cy.get('#password').type('secret_sauce')
+   // cy.get('#login-button').click()
 });
 
 it('Test2- login with multiple credentials', () => {

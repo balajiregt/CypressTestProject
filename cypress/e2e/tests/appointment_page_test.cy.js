@@ -1,4 +1,4 @@
-import AppointmentPage from './appointment_page.cy';
+import AppointmentPage from '../pages/appointment_page.cy';
 
 describe('template spec', () => {
     const appointmentPage = new AppointmentPage(); 

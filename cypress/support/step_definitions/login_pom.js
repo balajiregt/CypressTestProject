@@ -1,5 +1,5 @@
 import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor';
-import loginbdd from '../../e2e/pages/login_bdd_page.js';
+import loginbdd from '../../e2e/pages/login_page_bdd.js';
 
 const obj=new loginbdd()
 
