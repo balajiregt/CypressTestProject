@@ -5,7 +5,7 @@ class AppointmentPage {
     }
 
     clickMakeAppointment() {
-        cy.get('#btn-make-appointment').click();
+        cy.get('#btn-make-appointment').click()
     }
 
     enterUsername(username) {

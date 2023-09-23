@@ -28,3 +28,5 @@ it('rightarrow', () => {
     cy.visit('https://testautomationpractice.blogspot.com/')
     cy.get('.ui-slider-handle.ui-corner-all.ui-state-default').trigger('keydown', { key: 'ArrowRight' });
 });
+
+
