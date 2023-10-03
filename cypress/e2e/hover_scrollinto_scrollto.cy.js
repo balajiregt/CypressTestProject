@@ -40,7 +40,7 @@ it('To validate tooltip', () => {
     // cy.wait(500); // you might not need this, it's just for demo
 
     // Assert on the tooltip content
-    // In this case, the tooltip content is inside the title attribute of the button
+    // In this case, the tooltip content is inside the title attribute of the button edited
     cy.get('.tooltip').should('have.attr', '.tooltiptext.tooltip-top', 'Tooltip text');
 });
 
