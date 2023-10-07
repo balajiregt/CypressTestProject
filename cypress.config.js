@@ -7,7 +7,7 @@ module.exports = defineConfig({
 chromeWebSecurity: false,
 //baseUrl: 'https://example.com',
 
- projectId: '1xoanv',
+projectId: "2jbg7z",
  "retries": {
    // Configure retry attempts for `cypress run`
    // Default is 0
@@ -27,7 +27,7 @@ chromeWebSecurity: false,
       require('cypress-mochawesome-reporter/plugin')(on);
       return config;
     },
-    specPattern: '**/*.feature',
+   // specPattern: '**/*.feature',
     excludeSpecPattern: '**/pages/*',
     videosFolder: "cypress/reports/videos",
     screenshotsFolder: "cypress/reports/screenshots",
