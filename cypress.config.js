@@ -27,7 +27,7 @@ projectId: "2jbg7z",
       require('cypress-mochawesome-reporter/plugin')(on);
       return config;
     },
-   // specPattern: '**/*.feature',
+    specPattern: '**/*.feature',
     excludeSpecPattern: '**/pages/*',
     videosFolder: "cypress/reports/videos",
     screenshotsFolder: "cypress/reports/screenshots",
