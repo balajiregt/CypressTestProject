@@ -3,7 +3,7 @@ import Ajv from 'ajv';
 
 describe('sanity bankingapp', () => {
 
-  it('should validate the JSON schema in the fixtures against the GET API response', () => {
+  it('should validate the JSON schema in the fixtures against the GET response', () => {
     // Initialize AJV
     const ajv = new Ajv();
 
