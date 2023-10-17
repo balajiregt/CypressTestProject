@@ -17,10 +17,6 @@ class AppointmentPage2 {
         cy.visit('https://katalon-demo-cura.herokuapp.com');
     }
 
-    visit() {
-        cy.visit('https://katalon-demo-cura.herokuapp.com');
-    }
-
     getMakeAppointmentButton() {
         return cy.get(this.btnMakeAppointment).contains(this.samplebutton);
     }
