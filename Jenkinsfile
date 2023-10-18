@@ -6,11 +6,11 @@ pipeline:
     CYPRESS_INSTALL_BINARY: 12.7
 
   stages:
-    - stage: Checkout
+    - stage: 'Checkout'
       steps:
         - checkout scm
 
-    - stage: Build
+    - stage: 'Build'
       steps:
         - script:
             name: 'Install Dependencies'
@@ -18,7 +18,7 @@ pipeline:
               npm install
               npm install cypress@$CYPRESS_INSTALL_BINARY
 
-    - stage: Test
+    - stage: 'Test'
       steps:
         - script:
             name: 'Run Cypress Tests'
