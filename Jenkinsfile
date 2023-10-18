@@ -1,6 +1,10 @@
 pipeline {
   agent any
 
+  environment {
+    CYPRESS_INSTALL_BINARY = '12.7' // Removed trailing .0 from version
+  }
+
   stages {
     stage('Checkout') {
       steps {
@@ -11,8 +15,8 @@ pipeline {
     stage('Build') {
       steps {
         script {
-          command 'npm install'
-          command 'npm install cypress@$CYPRESS_INSTALL_BINARY'
+          sh 'npm install'
+          sh "npm install cypress@${CYPRESS_INSTALL_BINARY}"
         }
       }
     }
@@ -20,13 +24,12 @@ pipeline {
     stage('Test') {
       steps {
         script {
-          command 'npx cypress run --headless --browser chrome'
+          sh 'npx cypress run --headless --browser chrome'
         }
 
         post {
           always {
-            command(script: 'npx cypress-multi-reporters generate', args: '--reporter mochawesome --reporterOptions reportDir=cypress/reports/mochawesome,overwrite=false')
-
+            sh 'npx cypress-multi-reporters generate --reporter mochawesome --reporterOptions reportDir=cypress/reports/mochawesome,overwrite=false'
             archiveArtifacts artifacts: 'cypress/reports/mochawesome/*.html'
           }
         }
