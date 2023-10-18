@@ -25,7 +25,7 @@ pipeline {
 
         post {
           always {
-            command 'npx cypress-multi-reporters generate --reporter mochawesome --reporterOptions reportDir=cypress/reports/mochawesome,overwrite=false'
+            command(script: 'npx cypress-multi-reporters generate', args: '--reporter mochawesome --reporterOptions reportDir=cypress/reports/mochawesome,overwrite=false')
 
             archiveArtifacts artifacts: 'cypress/reports/mochawesome/*.html'
           }
