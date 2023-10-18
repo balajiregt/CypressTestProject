@@ -3,7 +3,7 @@ pipeline:
     label: 'Test'
 
   environment:
-    CYPRESS_INSTALL_BINARY: 12.7.0
+    CYPRESS_INSTALL_BINARY: 12.7
 
   stages:
     - stage: Checkout
