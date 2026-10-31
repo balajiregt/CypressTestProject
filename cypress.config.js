@@ -1,7 +1,7 @@
 const { defineConfig } = require("cypress");
 const createBundler = require("@bahmutov/cypress-esbuild-preprocessor");
 const preprocessor = require("@badeball/cypress-cucumber-preprocessor");
-const createEsbuildPlugin = require("@badeball/cypress-cucumber-preprocessor/esbuild");
+const { createEsbuildPlugin } = require("@badeball/cypress-cucumber-preprocessor/esbuild");
 
 module.exports = defineConfig({
 chromeWebSecurity: false,
@@ -18,12 +18,12 @@ projectId: "2jbg7z",
  },
  defaultCommandTimeout:5000,
   e2e: {
-    setupNodeEvents(on, config) {
+    async setupNodeEvents(on, config) {
+      await preprocessor.addCucumberPreprocessorPlugin(on, config);
       on("file:preprocessor",
       createBundler({
-        plugins: [createEsbuildPlugin.default(config)],
+        plugins: [createEsbuildPlugin(config)],
       }));
-      preprocessor.addCucumberPreprocessorPlugin(on, config);
       require('cypress-mochawesome-reporter/plugin')(on);
       return config;
     },
